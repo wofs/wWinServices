@@ -19,6 +19,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
+        <IsVisibleTab Value="True"/>
         <TopLine Value="60"/>
         <CursorPos X="3" Y="98"/>
         <UsageCount Value="26"/>
@@ -29,9 +30,8 @@
         <Filename Value="..\src\wwinservices.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="wWinServices"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <CursorPos X="4" Y="28"/>
+        <CursorPos X="8" Y="24"/>
         <UsageCount Value="22"/>
         <Loaded Value="True"/>
       </Unit2>

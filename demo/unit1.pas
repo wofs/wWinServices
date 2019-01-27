@@ -60,7 +60,7 @@ end;
 procedure TForm1.btnGetListClick(Sender: TObject);
 var
   i: Integer;
-  aList: TServices;
+  aList: TwServices;
 begin
   try
     aList:= fWinServices.ServicesList;

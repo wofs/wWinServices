@@ -15,21 +15,21 @@ uses Windows, Classes, SysUtils, jwaWinNT, jwaWinSvc, gvector;
 
 type
 
-  TService = record
+  TwService = record
     Name: string;
     Status: word;
     StatusText: string;
   end;
 
-  TServices = specialize TVector<TService>;
+  TwServices = specialize TVector<TwService>;
 
   { TWinServices }
 
   TWinServices = class
   private
-    function CreateServiceItem(aName: string; aStatus: word; aStatusText: string): TService;
+    function CreateServiceItem(aName: string; aStatus: word; aStatusText: string): TwService;
     function GetComputerName_: string;
-    function GetServicesList: TServices;
+    function GetServicesList: TwServices;
     function GetUserCurrentName: string;
     function ServiceStateText(State: word): string;
 
@@ -56,7 +56,7 @@ type
 
     function ServiceSetMode(aMachine, aService: string; Mode: word): boolean;
 
-    property ServicesList: TServices read GetServicesList;
+    property ServicesList: TwServices read GetServicesList;
     property ComputerName:string read GetComputerName_;
     property UserCurrentName:string read GetUserCurrentName;
   end;
@@ -75,7 +75,7 @@ implementation
 { TWinServices }
 
 function TWinServices.CreateServiceItem(aName: string; aStatus: word;
-  aStatusText: string): TService;
+  aStatusText: string): TwService;
 begin
   Result.Name := aName;
   Result.Status := aStatus;
@@ -276,7 +276,7 @@ begin
   end; { case }
 end;
 
-function TWinServices.GetServicesList: TServices;
+function TWinServices.GetServicesList: TwServices;
 const
   BuffSize = SizeOf(ENUM_SERVICE_STATUS) * 4096;
 
@@ -288,7 +288,7 @@ var
   R: DWord = 0;
   H: DWord = 0;
 begin
-  Result:= TServices.Create;
+  Result:= TwServices.Create;
 
   Result.Clear;
 
